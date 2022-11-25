@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import {
   Button,
-  Checkbox,
   Form,
-  Input,
   Select,
   TextArea,
 } from "semantic-ui-react";
