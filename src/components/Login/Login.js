@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./login.css";
 
-function App() {
+function Login() {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   // User Login info
   const database = [
@@ -41,6 +41,7 @@ function App() {
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
         setIsSubmitted(true);
+        navigate('/queryForm');
       }
     } else {
       // Username not found
@@ -51,7 +52,7 @@ function App() {
   const renderErrorMessage = (name) =>
     name === errorMessages.name && (
       <div className="error">{errorMessages.message}</div>
-    );
+  );
 
   const renderForm = (
     <div className="form">
@@ -73,15 +74,14 @@ function App() {
     </div>
   );
 
-//   return (
-//     <div className="app">
-//       <div className="login-form">
-//         <div className="title">Sign In</div>
-//         {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
-//       </div>
-//     </div>
-//   );
-return <Navigate replace to="/app" />;
+  return (
+    <div className="app">
+      <div className="login-form">
+        <div className="title">Sign In</div>
+          { renderForm } 
+      </div>
+    </div>
+  );
 }
 
-export default App;
+export default Login;

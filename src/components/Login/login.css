@@ -26,6 +26,17 @@ input[type="submit"] {
   padding: 10px 20px;
 }
 
+input[type="back"] {
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 15px;
+  background: seagreen;
+  border: 1px solid seagreen;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+}
+
 input[type="submit"]:hover {
   background: #6cf0c2;
 }
@@ -53,6 +64,11 @@ input[type="submit"]:hover {
 .title {
   font-size: 25px;
   margin-bottom: 20px;
+}
+.big-heading{
+  font-size: 32px;
+  margin-bottom: 20px;
+  color:seagreen;
 }
 
 .input-container {
